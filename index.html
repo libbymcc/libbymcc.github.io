@@ -18,22 +18,24 @@
         align-items: center;
         height: 100vh;
         background-color: #f0f0f0;
+        position: relative;
+        overflow: hidden;
       }
 
       h2 {
         position: absolute;
-        top: 10px;
-        left: 40px;
+        top: 1vh;
+        left: 2vw;
         color: tan;
-        font-size: 24px;
+        font-size: 1.5rem;
       }
 
       h3 {
         position: absolute;
-        top: 80px;
-        left: 40px;
+        top: 8.5vh;
+        left: 2vw;
         color: tan;
-        font-size: 16px;
+        font-size: 1rem;
       }
 
       h2 i {
@@ -43,10 +45,12 @@
       .container {
         display: grid;
         grid-template-rows: repeat(4, 1fr);
-        width: 700px;
+        width: 45vw;
+        max-width: 1200px;
         height: 95vh;
         border: 2px solid #f7f7f7;
         overflow: hidden;
+        position: relative;
       }
 
       .section {
@@ -61,28 +65,26 @@
         position: relative;
       }
 
-      .label {
+      .labels {
         position: absolute;
-        right: 220px; /* Align to the right side of the container */
-        color: tan;
-        top: 12%;
-        font-size: 18px;
-        text-align: left;
-        width: 200px;
+        top: 0;
+        right: 15%; /* Adjust distance from right edge */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2vh 0;
       }
 
-      /* Adjusting for each section's label position */
-      .section1 ~ .label {
-        top: 85%;
-      }
-      .section2 ~ .label {
-        top: 60%;
-      }
-      .section3 ~ .label {
-        top: 35%;
-      }
-      .section4 ~ .label {
-        top: 20%;
+      .label {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: clamp(1rem, 1.8vw, 1.3rem);
+        color: tan;
+        text-align: left;
+        padding-right: 10px;
       }
 
       .section:last-child {
@@ -174,13 +176,12 @@
     </div>
     <div>
       <h3>
-        Hover on each area to see and hear <br />more about the marsh's ecosystems.
+        Hover on each area to see and hear <br />more about the marsh's
+        ecosystems.
       </h3>
     </div>
 
     <div class="container">
-      <div class="label">High Marsh</div>
-
       <!-- Section 1 -->
       <div class="section section1">
         <div class="video-wrapper video1">
@@ -201,8 +202,6 @@
       </div>
 
       <!-- Section 2 -->
-      <div class="label">Low Marsh</div>
-
       <div class="section section2">
         <div class="video-wrapper video1">
           <video><source src="lowMarsh_01.mp4" type="video/mp4" /></video>
@@ -219,8 +218,6 @@
       </div>
 
       <!-- Section 3 -->
-      <div class="label">Mud Flats</div>
-
       <div class="section section3">
         <div class="video-wrapper video1">
           <video><source src="mudFlat_01.mp4" type="video/mp4" /></video>
@@ -234,8 +231,6 @@
       </div>
 
       <!-- Section 4 -->
-      <div class="label">Subtidal</div>
-
       <div class="section section4">
         <div class="video-wrapper video1">
           <video><source src="subtidal_01.mp4" type="video/mp4" /></video>
@@ -250,6 +245,12 @@
           <video><source src="subtidal_04.mp4" type="video/mp4" /></video>
         </div>
       </div>
+    </div>
+    <div class="labels">
+      <div class="label">High Marsh</div>
+      <div class="label">Low Marsh</div>
+      <div class="label">Mud Flats</div>
+      <div class="label">Subtidal</div>
     </div>
 
     <script>
