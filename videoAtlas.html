@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marsh</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      h2 {
+        position: absolute;
+        top: 10px;
+        left: 40px;
+        color: tan;
+        font-size: 24px;
+      }
+
+      h3 {
+        position: absolute;
+        top: 80px;
+        left: 40px;
+        color: tan;
+        font-size: 16px;
+      }
+
+      h2 i {
+        font-style: italic;
+      }
+
+      .container {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        width: 700px;
+        height: 95vh;
+        border: 2px solid #f7f7f7;
+        overflow: hidden;
+      }
+
+      .section {
+        padding: 4px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 1fr;
+        gap: 4px;
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #f7f7f7;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .label {
+        position: absolute;
+        right: 220px; /* Align to the right side of the container */
+        color: tan;
+        top: 12%;
+        font-size: 18px;
+        text-align: left;
+        width: 200px;
+      }
+
+      /* Adjusting for each section's label position */
+      .section1 ~ .label {
+        top: 85%;
+      }
+      .section2 ~ .label {
+        top: 60%;
+      }
+      .section3 ~ .label {
+        top: 35%;
+      }
+      .section4 ~ .label {
+        top: 20%;
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      .video-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .video-wrapper video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .video-wrapper:hover video {
+        transform: scale(1.2);
+        z-index: 10;
+      }
+
+      /* Unique collage layouts per section using grid-column and grid-row spans */
+      .section1 .video1 {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .section1 .video2 {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+      .section1 .video3 {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .section2 .video1 {
+        grid-column: span 1;
+        grid-row: span 4;
+      }
+      .section2 .video2 {
+        grid-column: span 1;
+        grid-row: span 4;
+      }
+      .section2 .video3 {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .section2 .video4 {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .section3 .video1 {
+        grid-column: span 1;
+        grid-row: span 4;
+      }
+      .section3 .video2 {
+        grid-column: span 1;
+        grid-row: span 4;
+      }
+      .section3 .video3 {
+        grid-column: span 2;
+        grid-row: span 4;
+      }
+
+      .section4 .video1 {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .section4 .video2 {
+        grid-column: span 1;
+        grid-row: span 4;
+      }
+      .section4 .video3 {
+        grid-column: span 1;
+        grid-row: span 4;
+      }
+      .section4 .video4 {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>The Anatomy of a Marsh<br /><i>sonic mapping of belle isle</i></h2>
+    </div>
+    <div>
+      <h3>
+        Hover on each area to see and hear <br />more about the marsh's ecosystems.
+      </h3>
+    </div>
+
+    <div class="container">
+      <div class="label">High Marsh</div>
+
+      <!-- Section 1 -->
+      <div class="section section1">
+        <div class="video-wrapper video1">
+          <video>
+            <source src="highMarsh_01.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-wrapper video2">
+          <video>
+            <source src="highMarsh_02.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-wrapper video3">
+          <video>
+            <source src="highMarsh_03.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="label">Low Marsh</div>
+
+      <div class="section section2">
+        <div class="video-wrapper video1">
+          <video><source src="lowMarsh_01.mp4" type="video/mp4" /></video>
+        </div>
+        <div class="video-wrapper video2">
+          <video><source src="lowMarsh_02.mp4" type="video/mp4" /></video>
+        </div>
+        <div class="video-wrapper video3">
+          <video><source src="lowMarsh_03.mp4" type="video/mp4" /></video>
+        </div>
+        <div class="video-wrapper video4">
+          <video><source src="lowMarsh_04.mp4" type="video/mp4" /></video>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="label">Mud Flats</div>
+
+      <div class="section section3">
+        <div class="video-wrapper video1">
+          <video><source src="mudFlat_01.mp4" type="video/mp4" /></video>
+        </div>
+        <div class="video-wrapper video2">
+          <video><source src="mudFlat_02.mp4" type="video/mp4" /></video>
+        </div>
+        <div class="video-wrapper video3">
+          <video><source src="mudFlat_03.mp4" type="video/mp4" /></video>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="label">Subtidal</div>
+
+      <div class="section section4">
+        <div class="video-wrapper video1">
+          <video><source src="subtidal_01.mp4" type="video/mp4" /></video>
+        </div>
+        <div class="video-wrapper video2">
+          <video><source src="subtidal_02.mp4" type="video/mp4" /></video>
+        </div>
+        <div class="video-wrapper video3">
+          <video><source src="subtidal_03.mp4" type="video/mp4" /></video>
+        </div>
+        <div class="video-wrapper video4">
+          <video><source src="subtidal_04.mp4" type="video/mp4" /></video>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const videos = document.querySelectorAll(".video-wrapper video");
+      videos.forEach((video) => {
+        video.parentElement.addEventListener("mouseenter", () => {
+          video.play();
+        });
+        video.parentElement.addEventListener("mouseleave", () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      });
+    </script>
+  </body>
+</html>
