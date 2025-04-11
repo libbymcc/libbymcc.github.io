@@ -22,20 +22,27 @@
         overflow: hidden;
       }
 
-      h2 {
+      .title-block {
         position: absolute;
-        top: 1vh;
+        top: 3vh;
         left: 2vw;
-        color: tan;
-        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1vh;
+        z-index: 100;
       }
 
-      h3 {
-        position: absolute;
-        top: 8.5vh;
-        left: 2vw;
+      .title-block h2 {
+        margin: 0;
         color: tan;
-        font-size: 1rem;
+        font-size: clamp(1.2rem, 1.7vw, 1.9rem);
+      }
+
+      .title-block h3 {
+        margin: 0;
+        color: tan;
+        font-size: clamp(0.8rem, 1.3vw, 1.5rem);
       }
 
       h2 i {
@@ -81,7 +88,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        font-size: clamp(1rem, 1.8vw, 1.3rem);
+        font-size: clamp(0.5rem, 1.2vw, 1.5rem);
         color: tan;
         text-align: left;
         padding-right: 10px;
@@ -171,10 +178,8 @@
     </style>
   </head>
   <body>
-    <div>
+    <div class="title-block">
       <h2>The Anatomy of a Marsh<br /><i>sonic mapping of belle isle</i></h2>
-    </div>
-    <div>
       <h3>
         Hover on each area to see and hear <br />more about the marsh's
         ecosystems.
